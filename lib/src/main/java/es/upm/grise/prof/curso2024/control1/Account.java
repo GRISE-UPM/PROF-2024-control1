@@ -1,0 +1,51 @@
+package es.upm.grise.prof.curso2024.control1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Account {
+	
+	private String accountNumber;
+	private float initialAmount;
+	private List<Transaction> transactions;
+	
+	Account() {
+		setTransactions(new ArrayList<Transaction>());
+	}
+	
+	public float getCurrentBalance() {
+		
+		float result = getInitialAmount();
+		
+		for(Transaction transaction : getTransactions()) {
+			result += transaction.getAmount();
+		}
+		
+		return result;
+	}
+	
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public float getInitialAmount() {
+		return initialAmount;
+	}
+
+	public void setInitialAmount(float initialAmount) {
+		this.initialAmount = initialAmount;
+	}
+
+}
