@@ -2,26 +2,16 @@ package es.upm.grise.prof.curso2024.control1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collection;
+
 
 public class Customer {
 	
 	private List<Account> accounts;
 	
-	public Customer() {
-		
+	Customer() {
 		accounts = new ArrayList<Account>();
-		
 	}
-	
-	
-	
-	public void addTransaction(Account account) {
-		
-		accounts.add(account);
-		
-	}
-	
-	
 	
 	public String getAccountWithHighestBalance() throws NoAccountsException {
 		
@@ -46,5 +36,8 @@ public class Customer {
 		return selectedAccount;
 		
 	}
-	
+
+    public void setAccounts ( final Collection<Account> accounts ) {
+        this.accounts.addAll(accounts);
+    }	
 }
